@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "watch":false,
+        "module": "amd",
+        "noImplicitAny": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "inlineSources": true,
+        "jsx": "react",
+        "noEmitOnError": true,
+        "outDir": "./www/js"
+    }
+}
