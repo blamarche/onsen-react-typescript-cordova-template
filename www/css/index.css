@@ -1,3 +1,96 @@
 /*
 Styles here
 */
+
+body {
+    overflow-x:hidden;
+}
+
+#app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+    #app div.page-container {
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        width: 100%;
+        z-index: 0;
+    }
+        #app div.page-container.top {
+            z-index: 1;
+        }
+
+.hidden {
+    display: none;
+}
+
+.slideIn {
+    animation-duration: 0.3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        left: 100%;
+        width:100%;
+    }
+
+    to {
+        left: 0%;
+        width: 100%;
+    }
+}
+
+.slideOut {
+    animation-duration: 0.3s;
+    animation-name: slideout;
+}
+
+@keyframes slideout {
+    from {
+        left: 0%;
+        width: 100%; 
+    }
+
+    to {
+        left: 100%;
+        width: 100%;
+    }
+}
+
+.fadeOut {
+    animation-duration: 0.3s;
+    animation-name: fadeout;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1.0; 
+    }
+
+    to {
+        opacity: 0.0;
+    }
+}
+
+.fadeIn {
+    animation-duration: 0.3s;
+    animation-name: fadein;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0.0; 
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}

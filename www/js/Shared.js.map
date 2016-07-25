@@ -1,0 +1,1 @@
+{"version":3,"file":"Shared.js","sourceRoot":"","sources":["../../scripts/Shared.ts"],"names":[],"mappings":";;IAGW,mBAAW,GAAe,IAAI,yBAAW,EAAE,CAAC;IAC1C,eAAO,GAAU,OAAO,CAAC","sourcesContent":["\nimport {PageManager} from './PageManager';\n\nexport var pageManager:PageManager = new PageManager();\nexport const VERSION:string = \"1.0.0\";"]}

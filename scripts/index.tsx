@@ -1,8 +1,10 @@
+import {StartPage}   from './StartPage';
+import {MainMenu}    from './MainMenu';
+import {pageManager} from './Shared';
+
 import * as cordova from 'cordova';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
-import { StartPage } from './StartPage';
 
 declare var ons:any;
 
@@ -10,7 +12,7 @@ namespace MyApp {
 
     namespace Application {
         "use strict";
-
+ 
         export function initialize() {
             document.addEventListener('deviceready', onDeviceReady, false);
         }
@@ -19,12 +21,11 @@ namespace MyApp {
             // Handle the Cordova pause and resume events
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
- 
-            ReactDOM.render(
-                <StartPage></StartPage>, document.getElementById('app') //all future page renders should NOT be on body, but on ID: app
-            );
-            
-            //TODO: custom navigator class w/ basic transitions/stack for single-page app, hide/show backbutton if exists
+
+            var w:any = window as any;
+            w.pageManager = pageManager;
+
+            pageManager.pushPage(pageManager.renderPage(<StartPage></StartPage>).page, ()=>{}, "", {title:"Start Page", urlpath:"/"});
         }
 
         function onPause() {
